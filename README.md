@@ -37,35 +37,40 @@ to evaluate and enhance software performance, reliability, and maintainability.
 
 ## 🗂️ **Project Structure**
 
+\`\`\`
 ParkMate/
-├── app.py # Main Flask app
-├── models/
-│ ├── user.py
-│ ├── vehicle.py
-│ └── parking_lot.py
-├── services/
-│ ├── db_service.py
-│ ├── metrics_service.py
-│ └── parking_service.py
-├── templates/
-│ ├── index.html
-│ └── history.html
-├── static/
-│ └── style.css
-├── database/
-│ └── parkmate.db
-├── docs/
-│ ├── halstead.json
-│ ├── information-metrics.json
-│ ├── live-variables-summary.txt
-│ ├── dispersion-metrics-simplified.csv
-│ └── halstead-metrics-summary.txt
+│
+├── app.py                         # Main Flask app
+│
+├── models/                        # Data Models
+│   ├── user.py
+│   ├── vehicle.py
+│   └── parking_lot.py
+│
+├── services/                      # Business Logic Layer
+│   ├── db_service.py
+│   ├── metrics_service.py
+│   └── parking_service.py
+│
+├── templates/                     # Frontend Pages
+│   ├── index.html
+│   └── history.html
+│
+├── static/                        # CSS & JS files
+│   └── style.css
+│
+├── database/                      # SQLite Database
+│   └── parkmate.db
+│
+├── docs/                          # Reports & Metrics Output
+│   ├── halstead.json
+│   ├── information-metrics.json
+│   ├── live-variables-summary.txt
+│   ├── dispersion-metrics-simplified.csv
+│   └── halstead-metrics-summary.txt
+│
 └── README.md
-
-ruby
-Copy code
-
----
+\`\`\`
 
 ## 🧮 **Software Quality Metrics**
 
