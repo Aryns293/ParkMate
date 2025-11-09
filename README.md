@@ -35,43 +35,6 @@ to evaluate and enhance software performance, reliability, and maintainability.
 
 ---
 
-## 🗂️ **Project Structure**
-
-\`\`\`
-ParkMate/
-│
-├── app.py                         # Main Flask app
-│
-├── models/                        # Data Models
-│   ├── user.py
-│   ├── vehicle.py
-│   └── parking_lot.py
-│
-├── services/                      # Business Logic Layer
-│   ├── db_service.py
-│   ├── metrics_service.py
-│   └── parking_service.py
-│
-├── templates/                     # Frontend Pages
-│   ├── index.html
-│   └── history.html
-│
-├── static/                        # CSS & JS files
-│   └── style.css
-│
-├── database/                      # SQLite Database
-│   └── parkmate.db
-│
-├── docs/                          # Reports & Metrics Output
-│   ├── halstead.json
-│   ├── information-metrics.json
-│   ├── live-variables-summary.txt
-│   ├── dispersion-metrics-simplified.csv
-│   └── halstead-metrics-summary.txt
-│
-└── README.md
-\`\`\`
-
 ## 🧮 **Software Quality Metrics**
 
 | Metric | Tool Used | Description |
@@ -136,7 +99,7 @@ Built a complete end-to-end system with UI + metrics reporting.
 
 👤 Developed By
 Aryan Sharma
-🎓 B.Tech CSE | Software Developer | Quality Analyst
+🎓 B.Tech Software Engineering | DTU
 🔗 GitHub: Aryns293
 
 🪪 License
