@@ -1,0 +1,27 @@
+{
+  "metrics": [
+    {
+      "file": "models/user.py",
+      "fanIn": 1,
+      "fanOut": 1,
+      "informationValue": 1
+    },
+    {
+      "file": "models/vehicle.py",
+      "fanIn": 2,
+      "fanOut": 1,
+      "informationValue": 2
+    },
+    {
+      "file": "models/parking_lot.py",
+      "fanIn": 3,
+      "fanOut": 2,
+      "informationValue": 12
+    }
+  ],
+  "summary": {
+    "totalFiles": 3,
+    "maxInfo": 12,
+    "avgInfo": 5.00
+  }
+}

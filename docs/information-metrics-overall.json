@@ -1,0 +1,45 @@
+{
+  "metrics": [
+    {
+      "file": "models/user.py",
+      "fanIn": 2,
+      "fanOut": 1,
+      "informationValue": 2
+    },
+    {
+      "file": "models/vehicle.py",
+      "fanIn": 3,
+      "fanOut": 2,
+      "informationValue": 12
+    },
+    {
+      "file": "models/parking_lot.py",
+      "fanIn": 4,
+      "fanOut": 3,
+      "informationValue": 36
+    },
+    {
+      "file": "services/parking_service.py",
+      "fanIn": 2,
+      "fanOut": 4,
+      "informationValue": 32
+    },
+    {
+      "file": "services/db_service.py",
+      "fanIn": 3,
+      "fanOut": 2,
+      "informationValue": 12
+    },
+    {
+      "file": "services/metrics_service.py",
+      "fanIn": 2,
+      "fanOut": 1,
+      "informationValue": 2
+    }
+  ],
+  "summary": {
+    "totalFiles": 6,
+    "maxInfo": 36,
+    "avgInfo": 16.0
+  }
+}

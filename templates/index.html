@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ParkMate – Parking Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>🚗 <b>ParkMate – Parking Management System</b></h1>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <div class="alert">
+        {% for message in messages %}<p>{{ message }}</p>{% endfor %}
+      </div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/park" class="form">
+        <input type="text" name="vehicle_number" placeholder="Vehicle Number" required>
+        <input type="text" name="driver_name" placeholder="Driver Name" required>
+        <input type="tel" name="phone" placeholder="Phone (+91)" pattern="[0-9]{10}" required>
+        <select name="vehicle_type">
+            <option value="Car">Car</option>
+            <option value="Bike">Bike</option>
+        </select>
+        <button type="submit">Park Vehicle</button>
+    </form>
+
+    <h2>Parking Slots</h2>
+    <table>
+        <tr><th>Slot ID</th><th>Status</th><th>Action</th></tr>
+        {% for slot in slots %}
+        <tr>
+            <td>{{ slot.slot_id }}</td>
+            <td>
+                {% if slot.is_occupied %}
+                    Occupied by {{ slot.vehicle.vehicle_number }}<br>
+                    👤 {{ slot.vehicle.driver_name }}<br>
+                    📞 {{ slot.vehicle.phone }}<br>
+                    ⏰ {{ slot.vehicle.entry_time.strftime("%H:%M:%S") }}
+                {% else %} Free {% endif %}
+            </td>
+            <td>{% if slot.is_occupied %}<a href="/leave/{{ slot.slot_id }}">Leave</a>{% else %}-{% endif %}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>📊 System Metrics</h2>
+    <table>
+        {% for k, v in stats.items() %}
+        <tr><td><b>{{ k }}</b></td><td>{{ v }}</td></tr>
+        {% endfor %}
+    </table>
+
+    <canvas id="metricsChart" width="400" height="150"></canvas>
+
+    <br><a href="/history" class="btn">📜 View Parking History</a>
+</div>
+
+<script>
+const ctx = document.getElementById('metricsChart');
+const chart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Classes','Methods','Attributes','Inheritance','Vehicles','Revenue'],
+    datasets: [{
+      label: 'System Metrics Overview',
+      data: [
+        {{ stats['Total Classes'] }},
+        {{ stats['Total Methods'] }},
+        {{ stats['Total Attributes'] }},
+        {{ stats['Inheritance Relations'] }},
+        {{ stats['Total Vehicles Parked'] }},
+        {{ stats['Total Revenue'] }}
+      ],
+      backgroundColor: [
+        '#007bff','#28a745','#ffc107','#17a2b8','#6f42c1','#fd7e14'
+      ]
+    }]
+  },
+  options: {responsive:true, plugins:{legend:{display:false}}}
+});
+</script>
+</body>
+</html>

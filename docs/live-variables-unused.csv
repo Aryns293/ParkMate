@@ -1,0 +1,2 @@
+File,Line,Message,Type
+services/metrics_service.py,28,Unused variable 'name',warning

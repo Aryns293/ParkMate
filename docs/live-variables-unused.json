@@ -1,0 +1,15 @@
+[
+    {
+        "type": "warning",
+        "module": "metrics_service",
+        "obj": "MetricsService.calculate_system_metrics",
+        "line": 28,
+        "column": 16,
+        "endLine": 28,
+        "endColumn": 20,
+        "path": "services/metrics_service.py",
+        "symbol": "unused-variable",
+        "message": "Unused variable 'name'",
+        "message-id": "W0612"
+    }
+]

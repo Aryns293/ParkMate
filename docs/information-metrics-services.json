@@ -1,0 +1,27 @@
+{
+  "metrics": [
+    {
+      "file": "services/parking_service.py",
+      "fanIn": 2,
+      "fanOut": 3,
+      "informationValue": 18
+    },
+    {
+      "file": "services/db_service.py",
+      "fanIn": 3,
+      "fanOut": 1,
+      "informationValue": 3
+    },
+    {
+      "file": "services/metrics_service.py",
+      "fanIn": 1,
+      "fanOut": 2,
+      "informationValue": 4
+    }
+  ],
+  "summary": {
+    "totalFiles": 3,
+    "maxInfo": 18,
+    "avgInfo": 8.33
+  }
+}
